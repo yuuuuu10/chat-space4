@@ -6,14 +6,15 @@
       %ul-left-header__members
         Member：
         %li-member
-         
+        - @group.users.each do |user|
+          = user.name
         %li-member
           
         %li-member
           
     .right-header
       .right-header__button
-        = link_to "edit",edit_group_path(@group)
+        = link_to "edit",edit_group_path(@group), class: "edit"
 
   .messages
     = render @messages
